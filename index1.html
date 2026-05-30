@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="index1.css">
+	<style type="text/css">
+		body
+{
+	background-image:url('https://images.all-free-download.com/images/graphiclarge/blue_abstract_background_310971.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;	
+}
+button
+{
+	padding: 10px;
+	width: 50%;
+	background-color: #00008B;
+	color: white;
+	border-radius: 24px;
+	margin-top: 20px;
+	font-size: 22px;
+}
+option
+{
+	background-color: #00008B;
+	color: white;
+} 
+.container {
+        display: flex;              /* Enables side-by-side layout */
+        align-items: center;        /* Vertically center items */
+        gap: 20px;                  /* Space between image and item */
+        padding: 20px;
+        border: 1px solid #ccc;
+        max-width: 80%;
+        margin: auto;
+		margin-top: 7%;
+    }
+
+    /* Image styling */
+    .container img {
+        max-width: 100%;           /* Limit image size */
+        height: 100%;               /* Keep aspect ratio */
+        border-radius: 100%;   
+		margin-right: 10%;      /* Rounded corners */
+    }
+
+    /* Item styling */
+    .item {
+        flex: 1;                    /* Take remaining space */
+    }
+
+    /* Responsive: Stack on small screens */
+    @media (max-width: 600px) {
+        .container {
+            flex-direction: column; /* Stack vertically */
+            text-align: center;
+        }
+    }
+
+	</style>
+</head>
+<body>
+	<div class="container">
+    <img src="./computer.jpeg" alt="Sample Image">
+    <div class="item">
+        <h1 style="color:#09008b;"><i>Please press button and ask your questions as mentioned below </i></h1>
+	<h3 style="color:#8b0000;"><i>i. Hello </i></h3>
+	<h3 style="color:#8b0000;"><i>ii. About This Project </i></h3>
+	<h3 style="color:#8b0000;"><i>iii. About Student Portal </i></h3>
+	<h3 style="color:#8b0000;"><i>iv. About Placement Officer </i></h3>
+	<h3 style="color:#8b0000;"><i>v. About Company </i></h3>
+	<h3 style="color:#8b0000;"><i>vi. Take Me To Project Starting Page </i></h3>
+        <button>Ask Your Question</button>
+    </div>
+</div>
+<br>
+
+<script >
+	const button = document.querySelector("button");
+const SpeechRecognition =
+	window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+recognition.onstart = function (){
+	console.log("Speech Recognition started!");
+};
+recognition.onresult = function (event){
+	console.log(event);
+	const spokenwords = event.results[0][0].transcript;
+	console.log("spoken words are",spokenwords);
+	computerSpeech(spokenwords);
+};
+
+function computerSpeech(words) {
+const speech = new SpeechSynthesisUtterance();
+speech.lang="en";
+speech.pitch=20;
+speech.volume=17000;
+speech.rate=1;
+
+determinewords(speech, words);
+
+window.speechSynthesis.speak(speech);
+}
+
+function determinewords(speech, words) 
+{
+	if (words.includes("Hello")) {
+		speech.text = "hello and welcome to campus recruitment system. How can i help you?";
+	}
+	if (words.includes("About This Project")) {
+		speech.text = "this is a campus recruitment system which consist of 3 modules student, placement officer and company, which one you want to know about?";
+	}
+	if (words.includes("About Student Portal")) {
+		speech.text = "consist of resume creating resume and view resume and send the details of students to placement officer";
+	}
+	if (words.includes("About Placement Officer")) {
+		speech.text = "he can view student details and company mails and shortlist students based on the criteria provided by the company";
+	}
+	if (words.includes("About Company")) {
+		speech.text = "send the mail of job description to placement officer";
+	}
+	if (words.includes("Take Me To Project Starting Page")) {
+		speech.text = "here you go";
+		window.open("http://127.0.0.1/final_project/dashboard.html")
+	}
+}
+
+button.addEventListener("click", () => {
+	recognition.start();
+});
+
+</script>
+</center>
+</body>
+</html>

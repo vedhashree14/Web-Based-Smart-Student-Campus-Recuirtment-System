@@ -1,0 +1,58 @@
+table{
+    border-collapse: collapse;
+}
+
+table td a{
+    text-decoration: none;
+    color: black;
+}
+
+table th,td{
+    padding: 5px !important;
+}
+    .navbar-default1
+{
+  background-color: #82CAFF;
+}
+.head{
+  width:100%;
+  background-color: #00008B;
+  height: 90px;
+  border-radius: 20px 20px 0 0;
+}
+.main{
+  width:30%;
+  height:300px;
+  background-color:#82CAFF ;
+    margin:50px 35%;
+    border-radius:20px 20px 30px 30px;
+}
+.name{
+  font-size:16px;
+  color:#00008B;
+  margin:15px 0 0 5%;
+  
+}
+body
+{
+  background-image:url('https://images.all-free-download.com/images/graphiclarge/blue_abstract_background_310971.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;  
+}
+input
+{
+  border-radius: 20px;
+}
+.sub:hover{
+  background-color:#82CAFF;
+  color:#fff;
+}
+.sub{
+  width:90%;
+  height:40px;
+  margin:15px 0 0 5%;
+  font-size: 16px;
+  border:1px solid rgb(17,67,107);
+    background-color:#00008B;
+    color :#fff;
+}

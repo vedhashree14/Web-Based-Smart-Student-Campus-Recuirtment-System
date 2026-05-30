@@ -1,0 +1,24 @@
+
+fieldset
+{
+	border-radius: 20px 20px 0 0;
+	height: 50%;
+	margin-top: 50px;
+}
+legend
+{
+	font-size: 30px;
+	
+}
+img 
+{
+	hegiht: 500px;
+	width: 350px;
+	margin-top:150px;
+	margin-bottom: 150px;
+	
+	border-radius: 60px;
+}
+img:hover {
+  background-color: yellow;
+}

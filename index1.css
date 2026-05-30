@@ -1,0 +1,17 @@
+body
+{
+	background-image:url('https://images.all-free-download.com/images/graphiclarge/blue_abstract_background_310971.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;	
+}
+button
+{
+	padding: 10px;
+	width: 30%;
+	background-color: cyan;
+	font-size: 22px;
+}
+option
+{
+	background-color: cyan;
+}
